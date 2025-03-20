@@ -57,8 +57,7 @@ public class TravelListController {
 			
 		 return mav;
 		 //kim 추가함
-		 //kim 추가함
-		 //kim 추가함
+		 //master 추가함
 		}
 		
 }
