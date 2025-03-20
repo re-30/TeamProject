@@ -17,6 +17,7 @@ public class TravelBean {
 	private String name;
 	/*
 	 * @NotNull(message="10살~100살로 작성해야합니다.")
+	 * @NotNull(message="10살~100살로 작성해야합니다.")
 	 * 
 	 * @Min(value=10)
 	 * 
