@@ -20,7 +20,8 @@ public class TravelBean {
 	 * @NotNull(message="10살~100살로 작성해야합니다.")
 	 * 
 	 * @Min(value=10)
-	 * 
+	 * kim팀원 수정
+	 * 한줄 더 추가
 	 * @Max(value=100)
 	 */
 	@Range(min = 10, max= 100, message="10살~100살로 작성해야 합니다.")
