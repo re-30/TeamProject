@@ -1,0 +1,54 @@
+drop table travel;
+create table travel(
+	num number primary key,
+	name varchar2(10),
+	age number,
+	area varchar2(30),
+	style varchar2(15),
+	price varchar2(10)
+);
+
+drop sequence travel_seq;
+create sequence travel_seq 
+minvalue 1
+start with 1
+nocache;
+
+insert into travel
+values(travel_seq.nextval, '수지',21, '동남아','패키지','200~300');
+
+commit;
+select * from travel;
+
+*.tv요청
+travel @Controller
+web-inf/trave/list.jsp
+
+1.pom.xml
+2.web.xml
+3.root-context.xml 데이터베이스 관련된 설정
+xml 2가지 만들고 파일 안에 일부 코드 작성 후 실행
+4.*.ab => servlet mapping 설정
+5.album-servlet.xml
+
+
+
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:mvc="http://www.springframework.org/schema/mvc"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc-3.1.xsd
+		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.1.xsd">
+
+	<mvc:annotation-driven/> <!-- 유효성검사 -->
+	
+	<bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+		<property name="prefix" value="/WEB-INF/album/" />
+		<property name="suffix" value=".jsp" />
+	</bean>
+	
+	<context:component-scan base-package="travel" />
+	
+</beans>
